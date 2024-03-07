@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: test-01-app-02
-        image: ggkknc/test-01:v1
+        image: ggkknc/test-01:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 80
