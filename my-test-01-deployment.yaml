@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-test-01-deployment
+  name: my-test-01-deployment-02
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-01-app
+      app: test-01-app-02
   template:
     metadata:
       labels:
-        app: test-01-app
+        app: test-01-app-02
     spec:
       containers:
-      - name: my-test-01-app
+      - name: test-01-app-02
         image: ggkknc/test-01:v1
         imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 80
 # service type loadbalancer       
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-01-app-svc
+  name: test-01-app-svc-02
 spec:
   selector:
-    app: test-01-app
+    app: test-01-app-02
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 80
+      targetPort: 80
   type: LoadBalancer
 
