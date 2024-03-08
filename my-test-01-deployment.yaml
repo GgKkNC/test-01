@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-test-01-deployment-02
+  name: my-test-01-deployment-03
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-01-app-02
+      app: test-01-app-03
   template:
     metadata:
       labels:
-        app: test-01-app-02
+        app: test-01-app-03
     spec:
       containers:
-      - name: test-01-app-02
+      - name: test-01-app-03
         image: ggkknc/test-01:TAG
         imagePullPolicy: Always
         ports:
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-01-app-svc-02
+  name: test-01-app-svc-03
 spec:
   selector:
-    app: test-01-app-02
+    app: test-01-app-03
   ports:
     - protocol: TCP
       port: 80
